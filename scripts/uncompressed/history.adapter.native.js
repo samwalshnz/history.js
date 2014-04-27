@@ -26,7 +26,7 @@
 
 
 	if (typeof module !== "undefined" && module.exports) {
-		module.exports = History = {}
+		module.exports = History = require('./history.js');
 	} else {
 		History = window.History = window.History||{}
 	}
