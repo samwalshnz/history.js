@@ -495,7 +495,26 @@ if (typeof JSON !== 'object') {
 	"use strict";
 
 	// Localise Globals
-	var History = window.History = window.History||{};
+	var
+        console = window.console||undefined, // Prevent a JSLint complain
+        document = window.document, // Make sure we are using the correct document
+        navigator = window.navigator, // Make sure we are using the correct navigator
+        sessionStorage = window.sessionStorage||false, // sessionStorage
+        setTimeout = window.setTimeout,
+        clearTimeout = window.clearTimeout,
+        setInterval = window.setInterval,
+        clearInterval = window.clearInterval,
+        JSON = window.JSON,
+        alert = window.alert,
+        History, // Public History Object
+        history = window.history; // Old History Object
+
+
+    if (typeof module !== "undefined" && module.exports) {
+        module.exports = History = {}
+    } else {
+        History = window.History = window.History||{},  
+    }
 
 	// Check Existence
 	if ( typeof History.Adapter !== 'undefined' ) {
