@@ -620,11 +620,18 @@ if (typeof JSON !== 'object') {
 
 	// Localise Globals
 	var
-		document = window.document, // Make sure we are using the correct document
-		setTimeout = window.setTimeout||setTimeout,
-		clearTimeout = window.clearTimeout||clearTimeout,
-		setInterval = window.setInterval||setInterval,
-		History = window.History = window.History||{}; // Public History Object
+        console = window.console||undefined, // Prevent a JSLint complain
+        document = window.document, // Make sure we are using the correct document
+        navigator = window.navigator, // Make sure we are using the correct navigator
+        sessionStorage = window.sessionStorage||false, // sessionStorage
+        setTimeout = window.setTimeout,
+        clearTimeout = window.clearTimeout,
+        setInterval = window.setInterval,
+        clearInterval = window.clearInterval,
+        JSON = window.JSON,
+        alert = window.alert,
+        History = window.History = window.History||{}, // Public History Object
+        history = window.history; // Old History Object
 
 	// Check Existence
 	if ( typeof History.initHtml4 !== 'undefined' ) {
