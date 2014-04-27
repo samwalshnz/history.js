@@ -513,7 +513,7 @@ if (typeof JSON !== 'object') {
     if (typeof module !== "undefined" && module.exports) {
         module.exports = History = {}
     } else {
-        History = window.History = window.History||{},  
+        History = window.History = window.History||{}; 
     }
 
 	// Check Existence
